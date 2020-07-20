@@ -1,0 +1,23 @@
+---
+common:
+  notfound: Not Found
+  notfoundpara01: You just hit a route that doesn&#39;t exist... the sadness.
+  home: Home
+  back: Back
+  backhome: Go back to Home
+
+index:
+  open:
+    title: Rehearsals
+
+menu:
+  about: About
+  report_issue: Report Issues
+
+issue:
+  title: Report Issues
+  para01: Welcome to report any issues or suggest any enhancement. Please send email to ...
+
+about:
+  title: About Us
+  para01: Find out the works and efforts from everyone, live in our own styles.
