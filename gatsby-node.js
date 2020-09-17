@@ -84,6 +84,89 @@ function loadTranslationObject(languageCode) {
   return Object.assign({}, ...translationObjects)
 }
 
+/*
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions
+  return new Promise((resolve, reject) => {
+    graphql(`
+      {
+        allApLinkCsv {
+          edges {
+            node {
+              id
+              cname
+              ename
+              description
+              url
+              subject_tag_ids
+              maincategory_tag_ids
+              publicity_tag_ids
+              media_tag_ids
+              tool_tag_ids
+              stage_tag_ids
+              state_tag_ids
+              license_tag_ids
+              promotional_article
+              dev_team
+              founded_time
+              source
+              added_time
+              added_by
+            }
+          }
+        }
+      }
+    `)
+      .then(result => {
+        result.data.allApLinkCsv.edges.forEach(({ node }) => {
+          createPage({
+            path: `/link/${node.id}/`,
+            component: path.resolve(
+              `./src/components/templates/linkPageTemplate.js`
+            ),
+            context: {
+              item: node,
+            },
+          })
+        })
+      })
+      .then((newsResolve, newsReject) => {
+        graphql(`
+          {
+            allApTagCsv {
+              edges {
+                node {
+                  id
+                  parent_id
+                  category_id
+                  zh
+                  en
+                  icon
+                  example
+                }
+              }
+            }
+          }
+        `).then(result => {
+          result.data.allApTagCsv.edges.forEach(({ node }) => {
+            createPage({
+              path: `/${node.category_id}/${node.id}/`,
+              component: path.resolve(
+                `./src/components/templates/tagsPageTemplate_${node.category_id}.js`
+              ),
+              context: {
+                item: node,
+                regex: `/${node.id}/`,
+              },
+            })
+          })
+          resolve()
+        })
+      })
+  })
+}
+*/
+
 exports.onCreateNode = ({ node }) => {
   console.log(node.internal.type)
 }
